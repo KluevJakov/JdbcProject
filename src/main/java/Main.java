@@ -1,5 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class Main {
     static void main() {
@@ -9,17 +11,17 @@ public class Main {
                     "postgres");
 
 
-            conn.setAutoCommit(false);
+            PreparedStatement ps = conn.prepareStatement("select * from users");
 
-            try {
-                System.out.println("Hello world!");
+            ResultSet rs = ps.executeQuery();
 
-                conn.commit();
-            } catch (Exception e) {
-                conn.rollback();
+            while (rs.next()) {
+                String uuid = rs.getString(1);
+                String name = rs.getString(2);
+                int age = rs.getInt(3);
+
+                System.out.printf("%s %s %s %n", uuid, name, age);
             }
-
-
         } catch (Exception e) {
             System.out.printf("Error: %s %n", e.getMessage());
         }
