@@ -2,6 +2,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.UUID;
 
 public class Main {
     static void main() {
@@ -16,7 +17,7 @@ public class Main {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                String uuid = rs.getString(1);
+                UUID uuid = UUID.fromString(rs.getString(1));
                 String name = rs.getString(2);
                 int age = rs.getInt(3);
 
