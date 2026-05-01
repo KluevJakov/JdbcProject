@@ -1,1 +1,6 @@
-Hello its file from your collaborator
+CONFLICT CHANGES
+
+
+HELLO 
+
+WORLD
