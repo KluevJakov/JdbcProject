@@ -1,6 +1,5 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 
 public class Main {
     static void main() {
@@ -13,7 +12,7 @@ public class Main {
             conn.setAutoCommit(false);
 
             try {
-
+                System.out.println("Hello world!");
 
                 conn.commit();
             } catch (Exception e) {
