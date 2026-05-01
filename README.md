@@ -1,1 +1,7 @@
 Я тебя опередил!
+CONFLICT CHANGES
+
+
+HELLO 
+
+WORLD
